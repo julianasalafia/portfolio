@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'constants.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,91 +13,87 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  List<String> draw = [
+    '▐▓█▀▀▀▀▀▀▀▀▀█▓▌░▄▄▄▄▄░',
+    '▐▓█░░▀░░▀▄░░█▓▌░█▄▄▄█░',
+    '▐▓█░░▄░░▄▀░░█▓▌░█▄▄▄█░',
+    '▐▓█▄▄▄▄▄▄▄▄▄█▓▌░█████░',
+    '░░░░▄▄███▄▄░░░░░█████░',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData.dark().copyWith(
+        textTheme: TextTheme(
+          bodySmall: kColorizeTextStyle,
+          bodyMedium: kColorizeTextStyle,
+          bodyLarge: kColorizeTextStyle,
+        ),
+        scaffoldBackgroundColor: Colors.black,
+      ),
       home: Scaffold(
         body: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Expanded(
-              child: Container(
-                color: Colors.black,
-                child: Column(
-                  children: [
-                    Text('name', style: TextStyle(color: Colors.white)),
-                    Image.asset(
-                      'assets/images/profile.jpg',
-                      scale: 3,
-                    ),
-                    Text('description', style: TextStyle(color: Colors.white)),
-                    SizedBox(height: 10.0),
-                    Text('contact', style: TextStyle(color: Colors.white)),
-                    Text('mail', style: TextStyle(color: Colors.white)),
-                    Text('linkedin', style: TextStyle(color: Colors.white)),
-                    Text('github', style: TextStyle(color: Colors.white)),
-                    Text('behance', style: TextStyle(color: Colors.white)),
-                    SizedBox(height: 10.0),
-                  ],
-                ),
-              ),
-            ),
-            Expanded(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('HARD SKILLS'),
-                  Text('experience 1'),
-                  Text('description 1'),
                   SizedBox(height: 10.0),
-                  Text('SOFT SKILLS'),
-                  Text('experience 1'),
-                  Text('description 1'),
+                  Text('HELLO, I\'M JULIANA SALAFIA'),
                   SizedBox(height: 10.0),
-                  Text('LANGUAGES'),
-                  Text('1'),
-                  Text('2'),
+                  Text(draw[0]),
+                  Text(draw[1]),
+                  Text(draw[2]),
+                  Text(draw[3]),
+                  Text(draw[4]),
                   SizedBox(height: 10.0),
-                  Text('EXTRAS'),
-                  Text('1'),
-                  Text('2'),
+                  Text(
+                      'I\'m a software engineer based in São Paulo, Brazil with 2 years of experience in the software industry. My focus area for the past few years has been android mobile front-end development with Kotlin. I also have 4 years of experience with WordPress.'),
                   SizedBox(height: 10.0),
-                  Text('EDUCATION'),
-                  Text('1'),
-                  Text('2'),
-                  SizedBox(height: 10.0),
-                  Text('FRAMEWORKS'),
-                  Text('1'),
-                  Text('2'),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('CONTACT'),
+                            Text(
+                                'mail..................juliana.salafia@gmail.com'),
+                            Text(
+                                'linkedin......linkedin.com.br/en/julianasalafia'),
+                            Text(
+                                'github................github.com/julianasalafia'),
+                            Text(
+                                'behance...................behance.net/jssalafia'),
+                          ],
+                        ),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('TECH'),
+                          Text('flutter'),
+                          Text('dart'),
+                          Text('mobile'),
+                          Text('android native'),
+                        ],
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
             Expanded(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 10.0),
-                  Text('HARD SKILLS'),
-                  Text('experience 1'),
-                  Text('description 1'),
-                  SizedBox(height: 10.0),
-                  Text('SOFT SKILLS'),
-                  Text('experience 1'),
-                  Text('description 1'),
-                  SizedBox(height: 10.0),
-                  Text('LANGUAGES'),
-                  Text('1'),
-                  Text('2'),
-                  SizedBox(height: 10.0),
-                  Text('EXTRAS'),
-                  Text('1'),
-                  Text('2'),
-                  SizedBox(height: 10.0),
-                  Text('EDUCATION'),
-                  Text('1'),
-                  Text('2'),
-                  SizedBox(height: 10.0),
-                  Text('FRAMEWORKS'),
-                  Text('1'),
-                  Text('2'),
+                  Text('CONTACT'),
+                  Text('mail'),
+                  Text('linkedin'),
+                  Text('github'),
+                  Text('behance'),
                 ],
               ),
             ),
