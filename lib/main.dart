@@ -21,53 +21,102 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Juliana Salafia'),
-              Text(
-                  'Olá :) Sou a Juliana, desenvolvedora android, moro na cidade de Santos em São Paulo e atuo com desenvolvimento frontend mobile utilizando a linguagem Kotlin.'),
-              Text('Contato'),
-              InkWell(
-                child: Text('email'),
-                onTap: () =>
-                    launchUrl(Uri.parse('mailto:juliana.salafia@gmail.com')),
+              Container(
+                color: Colors.green,
+                child: Column(
+                  children: [
+                    Text('Juliana Salafia'),
+                    Text(
+                        'Olá :) Sou a Juliana, desenvolvedora android, moro na cidade de Santos em São Paulo e atuo com desenvolvimento frontend mobile utilizando a linguagem Kotlin.'),
+                  ],
+                ),
               ),
-              InkWell(
-                child: Text('linkedin'),
-                onTap: () => launchUrl(
-                    Uri.parse('https://www.linkedin.com/in/julianasalafia/')),
+              Container(
+                color: Colors.red,
+                child: Column(
+                  children: [
+                    Text('Contato'),
+                    InkWell(
+                      child: Text('email'),
+                      onTap: () => launchUrl(
+                          Uri.parse('mailto:juliana.salafia@gmail.com')),
+                    ),
+                    InkWell(
+                      child: Text('linkedin'),
+                      onTap: () => launchUrl(Uri.parse(
+                          'https://www.linkedin.com/in/julianasalafia/')),
+                    ),
+                    InkWell(
+                      child: Text('github'),
+                      onTap: () => launchUrl(
+                          Uri.parse('https://github.com/julianasalafia')),
+                    ),
+                    InkWell(
+                      child: Text('behance'),
+                      onTap: () => launchUrl(
+                          Uri.parse('https://www.behance.net/jssalafia')),
+                    ),
+                  ],
+                ),
               ),
-              InkWell(
-                child: Text('github'),
-                onTap: () =>
-                    launchUrl(Uri.parse('https://github.com/julianasalafia')),
+              Container(
+                color: Colors.blue,
+                child: Column(
+                  children: [
+                    Text('Experiência'),
+                    Text('Desenvolvedora Android @ Player’s Bank'),
+                    Text(
+                        'Itaú Unibanco, São Paulo, Brazil – (Maio 2021 - Abril 2023)'),
+                    Text('descrição'),
+                    Text('Social Media / SEO Analyst'),
+                    Text(
+                        'FD Comunicação - PR Games&Esports, Jundiaí, Brasil – (Agosto 2018 - Maio 2021'),
+                    Text('descrição'),
+                  ],
+                ),
               ),
-              InkWell(
-                child: Text('behance'),
-                onTap: () =>
-                    launchUrl(Uri.parse('https://www.behance.net/jssalafia')),
+              Container(
+                color: Colors.yellow,
+                child: Column(
+                  children: [
+                    Text('HARD SKILLS'),
+                    Text('Kotlin'),
+                    Text('descrição'),
+                  ],
+                ),
               ),
-              Text('Experiência'),
-              Text('Desenvolvedora Android @ Player’s Bank'),
-              Text(
-                  'Itaú Unibanco, São Paulo, Brazil – (Maio 2021 - Abril 2023)'),
-              Text('descrição'),
-              Text('Social Media / SEO Analyst'),
-              Text(
-                  'FD Comunicação - PR Games&Esports, Jundiaí, Brasil – (Agosto 2018 - Maio 2021'),
-              Text('descrição'),
-              Text('HARD SKILLS'),
-              Text('Kotlin'),
-              Text('descrição'),
-              Text('SOFT SKILLS'),
-              Text('fofa'),
-              Text('descrição'),
-              Text('Idiomas'),
-              Text('Inglês'),
-              Text('nível'),
-              Text('Português'),
-              Text('nível'),
-              Text('Educação'),
-              Text('Design de Games'),
-              Text('descrição'),
+              Container(
+                color: Colors.purple,
+                child: Column(
+                  children: [
+                    Text('SOFT SKILLS'),
+                    Text('fofa'),
+                    Text('descrição'),
+                  ],
+                ),
+              ),
+              Container(
+                color: Colors.grey,
+                child: Column(
+                  children: [
+                    Text('Idiomas'),
+                    Text('Inglês'),
+                    Text('nível'),
+                    Text('Português'),
+                    Text('nível'),
+                  ],
+                ),
+              ),
+              Container(
+                color: Colors.pink,
+                child: Column(
+                  children: [
+                    Text('Educação'),
+                    Text('Design de Games'),
+                    Text('descrição'),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
