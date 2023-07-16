@@ -65,48 +65,82 @@ class _MyAppState extends State<MyApp> {
                 child: Column(
                   children: [
                     Text('Experiência', style: kTitleStyle),
-                    Text('Desenvolvedora Android @ Player’s Bank',
-                        style: kSubtitleStyle),
-                    Text(
-                        'Itaú Unibanco, São Paulo, Brazil – (Maio 2021 - Abril 2023)'),
-                    Text('descrição'),
-                    Text('Social Media / SEO Analyst', style: kSubtitleStyle),
-                    Text(
-                        'FD Comunicação - PR Games&Esports, Jundiaí, Brasil – (Agosto 2018 - Maio 2021'),
-                    Text('descrição'),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Column(
+                          children: [
+                            Text('Desenvolvedora Android @ Player’s Bank',
+                                style: kSubtitleStyle),
+                            Text(
+                                'Itaú Unibanco, São Paulo, Brazil – (Maio 2021 - Abril 2023)'),
+                            Text('descrição'),
+                          ],
+                        ),
+                        SizedBox(width: 10.0),
+                        Column(
+                          children: [
+                            Text('Social Media / SEO Analyst',
+                                style: kSubtitleStyle),
+                            Text(
+                                'FD Comunicação - PR Games&Esports, Jundiaí, Brasil – (Agosto 2018 - Maio 2021'),
+                            Text('descrição'),
+                          ],
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
               Container(
                 color: Colors.yellow,
-                child: Column(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('HARD SKILLS', style: kTitleStyle),
-                    Text('Kotlin'),
-                    Text('descrição'),
-                  ],
-                ),
-              ),
-              Container(
-                color: Colors.purple,
-                child: Column(
-                  children: [
-                    Text('SOFT SKILLS', style: kTitleStyle),
-                    Text('fofa'),
-                    Text('descrição'),
+                    Column(
+                      children: [
+                        Text('HARD SKILLS', style: kTitleStyle),
+                        Text('Kotlin'),
+                        Text('descrição'),
+                      ],
+                    ),
+                    SizedBox(width: 10.0),
+                    Column(
+                      children: [
+                        Text('SOFT SKILLS', style: kTitleStyle),
+                        Text('fofa'),
+                        Text('descrição'),
+                      ],
+                    ),
                   ],
                 ),
               ),
               Container(
                 color: Colors.grey,
-                child: Column(
-                  children: [
-                    Text('Idiomas', style: kTitleStyle),
-                    Text('Inglês'),
-                    Text('nível'),
-                    Text('Português'),
-                    Text('nível'),
-                  ],
+                child: Container(
+                  child: Column(
+                    children: [
+                      Text('Idiomas', style: kTitleStyle),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Column(
+                            children: [
+                              Text('Inglês'),
+                              Text('nível'),
+                            ],
+                          ),
+                          SizedBox(width: 10.0),
+                          Column(
+                            children: [
+                              Text('Português'),
+                              Text('nível'),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Container(
