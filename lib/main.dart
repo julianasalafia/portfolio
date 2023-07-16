@@ -17,26 +17,27 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: Colors.black,
+        textTheme: kTextTheme,
+      ),
       home: Scaffold(
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                color: Colors.green,
-                child: Column(
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Column(
+              children: [
+                Text('Juliana Salafia', style: kTitleStyle),
+                Text(
+                    'Olá :) Sou a Juliana, desenvolvedora android, moro na cidade de Santos em São Paulo e atuo com desenvolvimento frontend mobile utilizando a linguagem Kotlin.'),
+              ],
+            ),
+            Column(
+              children: [
+                Text('Contato', style: kTitleStyle),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text('Juliana Salafia', style: kTitleStyle),
-                    Text(
-                        'Olá :) Sou a Juliana, desenvolvedora android, moro na cidade de Santos em São Paulo e atuo com desenvolvimento frontend mobile utilizando a linguagem Kotlin.'),
-                  ],
-                ),
-              ),
-              Container(
-                color: Colors.red,
-                child: Column(
-                  children: [
-                    Text('Contato', style: kTitleStyle),
                     InkWell(
                       child: Text('email'),
                       onTap: () => launchUrl(
@@ -59,102 +60,101 @@ class _MyAppState extends State<MyApp> {
                     ),
                   ],
                 ),
-              ),
-              Container(
-                color: Colors.blue,
-                child: Column(
-                  children: [
-                    Text('Experiência', style: kTitleStyle),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Column(
-                          children: [
-                            Text('Desenvolvedora Android @ Player’s Bank',
-                                style: kSubtitleStyle),
-                            Text(
-                                'Itaú Unibanco, São Paulo, Brazil – (Maio 2021 - Abril 2023)'),
-                            Text('descrição'),
-                          ],
-                        ),
-                        SizedBox(width: 10.0),
-                        Column(
-                          children: [
-                            Text('Social Media / SEO Analyst',
-                                style: kSubtitleStyle),
-                            Text(
-                                'FD Comunicação - PR Games&Esports, Jundiaí, Brasil – (Agosto 2018 - Maio 2021'),
-                            Text('descrição'),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                color: Colors.yellow,
-                child: Row(
+              ],
+            ),
+            Column(
+              children: [
+                Text('Experiência', style: kTitleStyle),
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Column(
-                      children: [
-                        Text('HARD SKILLS', style: kTitleStyle),
-                        Text('Kotlin'),
-                        Text('descrição'),
-                      ],
+                    Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text('Desenvolvedora Android @ Player’s Bank',
+                              style: kSubtitleStyle),
+                          Text(
+                              'Itaú Unibanco, São Paulo, Brazil – (Maio 2021 - Abril 2023)'),
+                          Text(
+                              'Participei do desenvolvimento frontend Android em um projeto white label, onde lançamos o Player\'s Bank, um novo produto financeiro voltado para gamers menores de idade. Colaborei com a equipe de UX/UI na atualização do design system da plataforma e realizei testes automatizados com Espresso. Além disso, tive contato diário com Git, arquitetura MVVM e Kotlin.'),
+                        ],
+                      ),
                     ),
                     SizedBox(width: 10.0),
-                    Column(
-                      children: [
-                        Text('SOFT SKILLS', style: kTitleStyle),
-                        Text('fofa'),
-                        Text('descrição'),
-                      ],
+                    Expanded(
+                      child: Column(
+                        children: [
+                          Text('Social Media / SEO Analyst',
+                              style: kSubtitleStyle),
+                          Text(
+                              'FD Comunicação - PR Games&Esports, Jundiaí, Brasil – (Agosto 2018 - Maio 2021'),
+                          Text('descrição'),
+                        ],
+                      ),
                     ),
                   ],
                 ),
-              ),
-              Container(
-                color: Colors.grey,
-                child: Container(
-                  child: Column(
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  children: [
+                    Text('HARD SKILLS', style: kTitleStyle),
+                    Text('Kotlin'),
+                    Text('descrição'),
+                  ],
+                ),
+                SizedBox(width: 10.0),
+                Column(
+                  children: [
+                    Text('SOFT SKILLS', style: kTitleStyle),
+                    Text('fofa'),
+                    Text('descrição'),
+                  ],
+                ),
+              ],
+            ),
+            Container(
+              child: Column(
+                children: [
+                  Text('Idiomas', style: kTitleStyle),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Idiomas', style: kTitleStyle),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                      Column(
                         children: [
-                          Column(
-                            children: [
-                              Text('Inglês'),
-                              Text('nível'),
-                            ],
-                          ),
-                          SizedBox(width: 10.0),
-                          Column(
-                            children: [
-                              Text('Português'),
-                              Text('nível'),
-                            ],
-                          ),
+                          Text('Inglês'),
+                          Text('nível'),
+                        ],
+                      ),
+                      SizedBox(width: 10.0),
+                      Column(
+                        children: [
+                          Text('Português'),
+                          Text('nível'),
                         ],
                       ),
                     ],
                   ),
-                ),
+                ],
               ),
-              Container(
-                color: Colors.pink,
-                child: Column(
+            ),
+            Row(
+              children: [
+                Column(
                   children: [
                     Text('Educação', style: kTitleStyle),
                     Text('Design de Games'),
                     Text('descrição'),
                   ],
                 ),
-              ),
-            ],
-          ),
+              ],
+            ),
+          ],
         ),
       ),
     );
