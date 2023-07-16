@@ -1,3 +1,4 @@
+import 'package:curriculum_flutter/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -19,13 +20,13 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         body: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 color: Colors.green,
                 child: Column(
                   children: [
-                    Text('Juliana Salafia'),
+                    Text('Juliana Salafia', style: kTitleStyle),
                     Text(
                         'Olá :) Sou a Juliana, desenvolvedora android, moro na cidade de Santos em São Paulo e atuo com desenvolvimento frontend mobile utilizando a linguagem Kotlin.'),
                   ],
@@ -35,7 +36,7 @@ class _MyAppState extends State<MyApp> {
                 color: Colors.red,
                 child: Column(
                   children: [
-                    Text('Contato'),
+                    Text('Contato', style: kTitleStyle),
                     InkWell(
                       child: Text('email'),
                       onTap: () => launchUrl(
@@ -63,12 +64,13 @@ class _MyAppState extends State<MyApp> {
                 color: Colors.blue,
                 child: Column(
                   children: [
-                    Text('Experiência'),
-                    Text('Desenvolvedora Android @ Player’s Bank'),
+                    Text('Experiência', style: kTitleStyle),
+                    Text('Desenvolvedora Android @ Player’s Bank',
+                        style: kSubtitleStyle),
                     Text(
                         'Itaú Unibanco, São Paulo, Brazil – (Maio 2021 - Abril 2023)'),
                     Text('descrição'),
-                    Text('Social Media / SEO Analyst'),
+                    Text('Social Media / SEO Analyst', style: kSubtitleStyle),
                     Text(
                         'FD Comunicação - PR Games&Esports, Jundiaí, Brasil – (Agosto 2018 - Maio 2021'),
                     Text('descrição'),
@@ -79,7 +81,7 @@ class _MyAppState extends State<MyApp> {
                 color: Colors.yellow,
                 child: Column(
                   children: [
-                    Text('HARD SKILLS'),
+                    Text('HARD SKILLS', style: kTitleStyle),
                     Text('Kotlin'),
                     Text('descrição'),
                   ],
@@ -89,7 +91,7 @@ class _MyAppState extends State<MyApp> {
                 color: Colors.purple,
                 child: Column(
                   children: [
-                    Text('SOFT SKILLS'),
+                    Text('SOFT SKILLS', style: kTitleStyle),
                     Text('fofa'),
                     Text('descrição'),
                   ],
@@ -99,7 +101,7 @@ class _MyAppState extends State<MyApp> {
                 color: Colors.grey,
                 child: Column(
                   children: [
-                    Text('Idiomas'),
+                    Text('Idiomas', style: kTitleStyle),
                     Text('Inglês'),
                     Text('nível'),
                     Text('Português'),
@@ -111,7 +113,7 @@ class _MyAppState extends State<MyApp> {
                 color: Colors.pink,
                 child: Column(
                   children: [
-                    Text('Educação'),
+                    Text('Educação', style: kTitleStyle),
                     Text('Design de Games'),
                     Text('descrição'),
                   ],
