@@ -29,3 +29,7 @@ const kTextTheme = TextTheme(
     color: kTextColor,
   ),
 );
+
+var kBoxDecoration = BoxDecoration(
+  border: Border.all(color: kTextColor, width: 2.0),
+);
