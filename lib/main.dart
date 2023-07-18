@@ -54,6 +54,8 @@ class _MyAppState extends State<MyApp> {
     var skill2 = 'fofa';
     var skill2Description = 'descrição';
 
+    var sizedBoxWidth = 15.0;
+
     return MaterialApp(
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: Colors.black,
@@ -61,14 +63,16 @@ class _MyAppState extends State<MyApp> {
       ),
       home: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(25.0),
+          padding: const EdgeInsets.all(50.0),
           child: SingleChildScrollView(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Column(
                   children: [
-                    Text(title, style: kTitleStyle),
+                    Padding(
+                      padding: const EdgeInsets.all(25.0),
+                      child: Text(title, style: kTitleStyle),
+                    ),
                     Row(
                       children: [
                         Expanded(
@@ -84,7 +88,10 @@ class _MyAppState extends State<MyApp> {
                 ),
                 Column(
                   children: [
-                    Text(contactTitle, style: kTitleStyle),
+                    Padding(
+                      padding: const EdgeInsets.all(25.0),
+                      child: Text(contactTitle, style: kTitleStyle),
+                    ),
                     Container(
                       decoration: kBoxDecoration,
                       padding: EdgeInsets.all(12.0),
@@ -118,7 +125,10 @@ class _MyAppState extends State<MyApp> {
                 ),
                 Column(
                   children: [
-                    Text(experienceTitle, style: kTitleStyle),
+                    Padding(
+                      padding: const EdgeInsets.all(25.0),
+                      child: Text(experienceTitle, style: kTitleStyle),
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -137,7 +147,7 @@ class _MyAppState extends State<MyApp> {
                             ),
                           ),
                         ),
-                        SizedBox(width: 10.0),
+                        SizedBox(width: sizedBoxWidth),
                         Expanded(
                           child: Container(
                             decoration: kBoxDecoration,
@@ -161,8 +171,14 @@ class _MyAppState extends State<MyApp> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Text(hardSkillsTitle, style: kTitleStyle),
-                        Text(softSkillsTitle, style: kTitleStyle),
+                        Padding(
+                          padding: const EdgeInsets.all(25.0),
+                          child: Text(hardSkillsTitle, style: kTitleStyle),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(25.0),
+                          child: Text(softSkillsTitle, style: kTitleStyle),
+                        ),
                       ],
                     ),
                     Row(
@@ -179,7 +195,7 @@ class _MyAppState extends State<MyApp> {
                             ),
                           ),
                         ),
-                        SizedBox(width: 10.0),
+                        SizedBox(width: sizedBoxWidth),
                         Expanded(
                           child: Container(
                             decoration: kBoxDecoration,
@@ -199,7 +215,10 @@ class _MyAppState extends State<MyApp> {
                 Container(
                   child: Column(
                     children: [
-                      Text(languagesTitle, style: kTitleStyle),
+                      Padding(
+                        padding: const EdgeInsets.all(25.0),
+                        child: Text(languagesTitle, style: kTitleStyle),
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -215,7 +234,7 @@ class _MyAppState extends State<MyApp> {
                               ),
                             ),
                           ),
-                          SizedBox(width: 10.0),
+                          SizedBox(width: sizedBoxWidth),
                           Expanded(
                             child: Container(
                               decoration: kBoxDecoration,
@@ -233,20 +252,27 @@ class _MyAppState extends State<MyApp> {
                     ],
                   ),
                 ),
-                Row(
+                Column(
                   children: [
-                    Expanded(
-                      child: Container(
-                        decoration: kBoxDecoration,
-                        padding: EdgeInsets.all(12.0),
-                        child: Column(
-                          children: [
-                            Text(educationTitle, style: kTitleStyle),
-                            Text(graduationCourse),
-                            Text(graduationDescription),
-                          ],
+                    Padding(
+                      padding: const EdgeInsets.all(25.0),
+                      child: Text(educationTitle, style: kTitleStyle),
+                    ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            decoration: kBoxDecoration,
+                            padding: EdgeInsets.all(12.0),
+                            child: Column(
+                              children: [
+                                Text(graduationCourse),
+                                Text(graduationDescription),
+                              ],
+                            ),
+                          ),
                         ),
-                      ),
+                      ],
                     ),
                   ],
                 ),
