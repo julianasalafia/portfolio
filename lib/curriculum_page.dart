@@ -28,7 +28,7 @@ class CurriculumPage extends StatelessWidget {
     var educationTitle = 'Educação';
     var graduationCourse = 'Design de Games';
     var graduationDescription = 'descrição';
-    var languagesTitle = 'Idiomas';
+    var languagesTitle = 'IDIOMAS';
 
     var firstLanguage = 'Inglês';
     var secondLanguage = 'Português';
@@ -44,7 +44,7 @@ class CurriculumPage extends StatelessWidget {
     var skill2 = 'fofa';
     var skill2Description = 'descrição';
 
-    var sizedBoxWidth = 15.0;
+    double sizedBoxWidth = 15.0;
 
     return Scaffold(
       body: Padding(
@@ -108,6 +108,76 @@ class CurriculumPage extends StatelessWidget {
                   ),
                 ],
               ),
+              Padding(
+                padding: EdgeInsets.all(sizedBoxWidth),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(25.0),
+                      child: Text(hardSkillsTitle, style: kTitleStyle),
+                    ),
+                    Expanded(
+                      child: Container(
+                        decoration: kBoxDecoration,
+                        padding: EdgeInsets.all(12.0),
+                        child: Column(
+                          children: [
+                            Text(skill1),
+                            Text(skill1Description),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: sizedBoxWidth),
+                    Padding(
+                      padding: const EdgeInsets.all(25.0),
+                      child: Text(softSkillsTitle, style: kTitleStyle),
+                    ),
+                    Expanded(
+                      child: Container(
+                        decoration: kBoxDecoration,
+                        padding: EdgeInsets.all(12.0),
+                        child: Column(
+                          children: [
+                            Text(skill2),
+                            Text(skill2Description),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: sizedBoxWidth),
+                    Padding(
+                      padding: const EdgeInsets.all(25.0),
+                      child: Text(languagesTitle, style: kTitleStyle),
+                    ),
+                    Expanded(
+                      child: Container(
+                        decoration: kBoxDecoration,
+                        padding: EdgeInsets.all(12.0),
+                        child: Column(
+                          children: [
+                            Text(firstLanguage),
+                            Text(firstLanguageLevel),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: sizedBoxWidth),
+                    Expanded(
+                      child: Container(
+                        decoration: kBoxDecoration,
+                        padding: EdgeInsets.all(12.0),
+                        child: Column(
+                          children: [
+                            Text(secondLanguage),
+                            Text(secondLanguageLevel),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               Column(
                 children: [
                   Padding(
@@ -149,93 +219,6 @@ class CurriculumPage extends StatelessWidget {
                     ],
                   ),
                 ],
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(25.0),
-                        child: Text(hardSkillsTitle, style: kTitleStyle),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(25.0),
-                        child: Text(softSkillsTitle, style: kTitleStyle),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Container(
-                          decoration: kBoxDecoration,
-                          padding: EdgeInsets.all(12.0),
-                          child: Column(
-                            children: [
-                              Text(skill1),
-                              Text(skill1Description),
-                            ],
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: sizedBoxWidth),
-                      Expanded(
-                        child: Container(
-                          decoration: kBoxDecoration,
-                          padding: EdgeInsets.all(12.0),
-                          child: Column(
-                            children: [
-                              Text(skill2),
-                              Text(skill2Description),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              Container(
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(25.0),
-                      child: Text(languagesTitle, style: kTitleStyle),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Expanded(
-                          child: Container(
-                            decoration: kBoxDecoration,
-                            padding: EdgeInsets.all(12.0),
-                            child: Column(
-                              children: [
-                                Text(firstLanguage),
-                                Text(firstLanguageLevel),
-                              ],
-                            ),
-                          ),
-                        ),
-                        SizedBox(width: sizedBoxWidth),
-                        Expanded(
-                          child: Container(
-                            decoration: kBoxDecoration,
-                            padding: EdgeInsets.all(12.0),
-                            child: Column(
-                              children: [
-                                Text(secondLanguage),
-                                Text(secondLanguageLevel),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
               ),
               Column(
                 children: [
