@@ -1,6 +1,5 @@
-import 'package:curriculum_flutter/constants.dart';
+import 'package:curriculum_flutter/screens/main_page.dart';
 import 'package:flutter/material.dart';
-import 'curriculum_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,11 +16,11 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: Colors.black,
+      /*theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: Colors.white,
         textTheme: kTextTheme,
-      ),
-      home: CurriculumPage(),
+      ),*/
+      home: MainPage(),
     );
   }
 }
