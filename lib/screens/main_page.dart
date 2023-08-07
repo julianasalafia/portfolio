@@ -9,51 +9,74 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Expanded(
-            child: Column(
-              children: [Text('cima')],
+    return Container(
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/images/background.jpg'),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Column(
+          children: [
+            Expanded(
+              child: Column(
+                children: [Text('cima')],
+              ),
             ),
-          ),
-          Column(
-            children: [
-              Container(
-                height: 50.0,
-                color: kLicorice,
-                child: Row(
-                  children: [
-                    Container(
-                        padding: EdgeInsets.fromLTRB(25, 15, 25, 15),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: kLightCrimson,
-                            width: 3.0,
+            Column(
+              children: [
+                Container(
+                  height: 50.0,
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [kPinkPantone, kLicorice]),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.fromLTRB(25, 0, 25, 5),
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: const FaIcon(
+                            FontAwesomeIcons.windows,
+                            size: 30,
                           ),
                         ),
-                        child: Text('teste')),
-                    SizedBox(width: 10),
-                    Container(
-                        padding: EdgeInsets.fromLTRB(25, 15, 25, 15),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: kLightCrimson,
-                            width: 3.0,
-                          ),
-                        ),
-                        child: Text('teste')),
-                    SizedBox(width: 10),
-                    Container(
+                      ),
+                      SizedBox(width: 10),
+                      Container(
                         padding: EdgeInsets.all(5),
                         decoration: BoxDecoration(
-                          border: Border.all(
-                            color: kLightCrimson,
-                            width: 3.0,
-                          ),
-                        ),
+                            // border: Border.all(
+                            //   color: kLightCrimson,
+                            //   width: 3.0,
+                            // ),
+                            ),
                         child: Row(
                           children: [
+                            SizedBox(
+                              width: 45,
+                              height: 45,
+                              child: TextButton(
+                                onPressed: () {},
+                                child: Text(
+                                  'POR',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(top: 5, bottom: 5),
+                              child: VerticalDivider(
+                                color: Colors.white,
+                                thickness: 0.3,
+                              ),
+                            ),
                             IconButton(
                               onPressed: () {},
                               icon: const FaIcon(
@@ -91,14 +114,15 @@ class MainPage extends StatelessWidget {
                                   .format(DateTime.now()),
                             )
                           ],
-                        )),
-                    SizedBox(width: 10),
-                  ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
-          ),
-        ],
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
