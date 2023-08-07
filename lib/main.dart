@@ -16,10 +16,15 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      /*theme: ThemeData.dark().copyWith(
+      theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: Colors.white,
-        textTheme: kTextTheme,
-      ),*/
+        textTheme: TextTheme(
+          bodyMedium: TextStyle(
+            fontSize: 13.0,
+            color: Colors.white,
+          ),
+        ),
+      ),
       home: MainPage(),
     );
   }

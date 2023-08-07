@@ -1,3 +1,4 @@
+/*
 import 'package:flutter/material.dart';
 
 const kTextColor = Color(0xFF149414);
@@ -33,3 +34,4 @@ const kTextTheme = TextTheme(
 var kBoxDecoration = BoxDecoration(
   border: Border.all(color: kTextColor, width: 2.0),
 );
+*/
