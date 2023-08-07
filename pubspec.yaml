@@ -28,8 +28,3 @@ flutter:
 
   assets:
     - assets/images/
-
-  fonts:
-    - family: Courier
-      fonts:
-        - asset: assets/fonts/CourierPrime_Regular.ttf
