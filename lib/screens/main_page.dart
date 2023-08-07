@@ -22,7 +22,7 @@ class MainPage extends StatelessWidget {
           children: [
             Expanded(
               child: Column(
-                children: [Text('cima')],
+                children: [Text('')],
               ),
             ),
             Column(
@@ -39,7 +39,7 @@ class MainPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        padding: const EdgeInsets.fromLTRB(25, 0, 25, 5),
+                        padding: const EdgeInsets.fromLTRB(10, 0, 0, 5),
                         child: IconButton(
                           onPressed: () {},
                           icon: const FaIcon(
@@ -112,7 +112,8 @@ class MainPage extends StatelessWidget {
                             Text(
                               DateFormat('h:mm a \ndd/MM/yyyy')
                                   .format(DateTime.now()),
-                            )
+                            ),
+                            SizedBox(width: 15),
                           ],
                         ),
                       ),
