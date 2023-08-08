@@ -1,6 +1,5 @@
 import 'package:curriculum_flutter/shared/app_colors.dart';
 import 'package:curriculum_flutter/shared/constants.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class GithubPage extends StatefulWidget {
@@ -31,35 +30,48 @@ class _GithubPageState extends State<GithubPage> {
           Positioned(
             left: xPosition,
             top: yPosition,
-            child: Column(
-              children: [
-                Container(
-                  width: width,
-                  height: navTaskBarHeight,
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        topRight: Radius.circular(20)),
-                    gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: AppColors.degrade,
-                    ),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColors.kLicorice.withOpacity(0.2),
+                    spreadRadius: 2,
+                    blurRadius: 2,
+                    offset: const Offset(0, 1),
                   ),
-                  child: Row(),
-                ),
-                Container(
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                      bottomRight: Radius.circular(20),
-                      bottomLeft: Radius.circular(20),
+                ],
+              ),
+              child: Column(
+                children: [
+                  Container(
+                    width: width,
+                    height: navTaskBarHeight,
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20),
+                          topRight: Radius.circular(20)),
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: AppColors.degrade,
+                      ),
                     ),
+                    child: Row(),
                   ),
-                  width: width,
-                  height: height,
-                ),
-              ],
+                  Container(
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(20),
+                        bottomLeft: Radius.circular(20),
+                      ),
+                    ),
+                    width: width,
+                    height: height,
+                  ),
+                ],
+              ),
             ),
           ),
           Positioned(
