@@ -1,5 +1,6 @@
 import 'package:curriculum_flutter/shared/app_colors.dart';
 import 'package:curriculum_flutter/shared/constants.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class GithubPage extends StatefulWidget {
@@ -12,6 +13,9 @@ class GithubPage extends StatefulWidget {
 class _GithubPageState extends State<GithubPage> {
   double xPosition = 0;
   double yPosition = 0;
+
+  double width = 500;
+  double height = 450;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +34,7 @@ class _GithubPageState extends State<GithubPage> {
             child: Column(
               children: [
                 Container(
-                  width: 500,
+                  width: width,
                   height: navTaskBarHeight,
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
@@ -52,10 +56,42 @@ class _GithubPageState extends State<GithubPage> {
                       bottomLeft: Radius.circular(20),
                     ),
                   ),
-                  width: 500,
-                  height: 450,
+                  width: width,
+                  height: height,
                 ),
               ],
+            ),
+          ),
+          Positioned(
+            left: xPosition + width - 10,
+            top: yPosition,
+            child: GestureDetector(
+              onPanUpdate: (tapInfo) {
+                setState(() {
+                  width += tapInfo.delta.dx;
+                });
+              },
+              child: Container(
+                width: 20,
+                height: height + navTaskBarHeight,
+                color: Colors.transparent,
+              ),
+            ),
+          ),
+          Positioned(
+            left: xPosition,
+            top: yPosition + height + navTaskBarHeight - 10,
+            child: GestureDetector(
+              onPanUpdate: (tapInfo) {
+                setState(() {
+                  height += tapInfo.delta.dy;
+                });
+              },
+              child: Container(
+                width: width,
+                height: 20,
+                color: Colors.transparent,
+              ),
             ),
           ),
         ],
