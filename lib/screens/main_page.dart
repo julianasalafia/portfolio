@@ -2,17 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 
-import '../constants.dart';
+import '../shared/app_colors.dart';
+import '../shared/constants.dart';
+import '../widgets/main_divider.dart';
+import '../widgets/social_icon_button.dart';
+import '../widgets/task_bar_text_button.dart';
 
-class MainPage extends StatelessWidget {
+class MainPage extends StatefulWidget {
   const MainPage({super.key});
+
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  get onPressed => null;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/background.jpg'),
+          image: AssetImage(backgroundImage),
           fit: BoxFit.cover,
         ),
       ),
@@ -20,7 +31,7 @@ class MainPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         body: Column(
           children: [
-            Expanded(
+            const Expanded(
               child: Column(
                 children: [Text('')],
               ),
@@ -28,92 +39,55 @@ class MainPage extends StatelessWidget {
             Column(
               children: [
                 Container(
-                  height: 50.0,
+                  height: taskBarHeight,
                   decoration: const BoxDecoration(
                     gradient: LinearGradient(
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
-                        colors: [kPinkPantone, kLicorice]),
+                        colors: AppColors.degrade),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
                         padding: const EdgeInsets.fromLTRB(10, 0, 0, 5),
-                        child: IconButton(
+                        child: SocialIconButton(
+                          icon: FontAwesomeIcons.windows,
+                          iconSize: iconHuge,
                           onPressed: () {},
-                          icon: const FaIcon(
-                            FontAwesomeIcons.windows,
-                            size: 30,
-                          ),
                         ),
                       ),
-                      SizedBox(width: 10),
+                      const SizedBox(width: sizedBoxWidth),
                       Container(
-                        padding: EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                            // border: Border.all(
-                            //   color: kLightCrimson,
-                            //   width: 3.0,
-                            // ),
-                            ),
+                        padding: const EdgeInsets.all(5),
                         child: Row(
                           children: [
-                            SizedBox(
-                              width: 45,
-                              height: 45,
-                              child: TextButton(
-                                onPressed: () {},
-                                child: Text(
-                                  'POR',
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(top: 5, bottom: 5),
-                              child: VerticalDivider(
-                                color: Colors.white,
-                                thickness: 0.3,
-                              ),
-                            ),
-                            IconButton(
+                            const TaskBarTextButton(buttonText: languageButton),
+                            const MainDivider(),
+                            SocialIconButton(
+                              icon: FontAwesomeIcons.github,
                               onPressed: () {},
-                              icon: const FaIcon(
-                                FontAwesomeIcons.github,
-                                size: 20,
-                              ),
                             ),
-                            SizedBox(width: 10),
-                            IconButton(
+                            const SizedBox(width: sizedBoxWidth),
+                            SocialIconButton(
+                              icon: FontAwesomeIcons.linkedinIn,
                               onPressed: () {},
-                              icon: const FaIcon(
-                                FontAwesomeIcons.linkedinIn,
-                                size: 20,
-                              ),
                             ),
-                            SizedBox(width: 10),
-                            IconButton(
+                            const SizedBox(width: sizedBoxWidth),
+                            SocialIconButton(
+                              icon: FontAwesomeIcons.behance,
                               onPressed: () {},
-                              icon: const FaIcon(
-                                FontAwesomeIcons.behance,
-                                size: 20,
-                              ),
                             ),
-                            SizedBox(width: 10),
-                            IconButton(
+                            const SizedBox(width: sizedBoxWidth),
+                            SocialIconButton(
+                              icon: FontAwesomeIcons.link,
                               onPressed: () {},
-                              icon: const FaIcon(
-                                FontAwesomeIcons.link,
-                                size: 20,
-                              ),
                             ),
-                            SizedBox(width: 10),
+                            const SizedBox(width: sizedBoxWidth),
                             Text(
-                              DateFormat('h:mm a \ndd/MM/yyyy')
-                                  .format(DateTime.now()),
+                              DateFormat(dateFormat).format(DateTime.now()),
                             ),
-                            SizedBox(width: 15),
+                            const SizedBox(width: paddingRight),
                           ],
                         ),
                       ),

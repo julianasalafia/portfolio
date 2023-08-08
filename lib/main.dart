@@ -1,4 +1,5 @@
 import 'package:curriculum_flutter/screens/main_page.dart';
+import 'package:curriculum_flutter/shared/constants.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,14 +19,14 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: Colors.white,
-        textTheme: TextTheme(
+        textTheme: const TextTheme(
           bodyMedium: TextStyle(
-            fontSize: 13.0,
+            fontSize: textSizeSmall,
             color: Colors.white,
           ),
         ),
       ),
-      home: MainPage(),
+      home: const MainPage(),
     );
   }
 }
