@@ -5,6 +5,7 @@ const sizedBoxWidth = 10.0;
 const paddingRight = 15.0;
 
 const taskBarHeight = 50.0;
+const navTaskBarHeight = 30.0;
 
 const textSizeSmall = 13.0;
 
