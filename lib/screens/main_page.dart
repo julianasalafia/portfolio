@@ -17,8 +17,6 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  get onPressed => null;
-
   @override
   Widget build(BuildContext context) {
     return Container(

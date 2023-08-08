@@ -1,6 +1,8 @@
 import 'package:curriculum_flutter/shared/app_colors.dart';
 import 'package:curriculum_flutter/shared/constants.dart';
+import 'package:curriculum_flutter/widgets/social_icon_button.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class GithubPage extends StatefulWidget {
   const GithubPage({super.key});
@@ -32,7 +34,7 @@ class _GithubPageState extends State<GithubPage> {
             top: yPosition,
             child: Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(15),
                 boxShadow: [
                   BoxShadow(
                     color: AppColors.kLicorice.withOpacity(0.2),
@@ -44,27 +46,50 @@ class _GithubPageState extends State<GithubPage> {
               ),
               child: Column(
                 children: [
-                  Container(
-                    width: width,
-                    height: navTaskBarHeight,
-                    decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          topRight: Radius.circular(20)),
-                      gradient: LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: AppColors.degrade,
+                  Material(
+                    color: Colors.transparent,
+                    child: Container(
+                      width: width,
+                      height: navTaskBarHeight,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(10)),
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: AppColors.degrade,
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          SocialIconButton(
+                            icon: FontAwesomeIcons.minus,
+                            iconSize: 10.0,
+                            onPressed: () {},
+                          ),
+                          SocialIconButton(
+                            icon: FontAwesomeIcons.windowRestore,
+                            iconSize: 10.0,
+                            onPressed: () {},
+                          ),
+                          SocialIconButton(
+                            icon: FontAwesomeIcons.xmark,
+                            iconSize: 10.0,
+                            onPressed: () {},
+                          ),
+                        ],
                       ),
                     ),
-                    child: Row(),
                   ),
                   Container(
                     decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
-                        bottomRight: Radius.circular(20),
-                        bottomLeft: Radius.circular(20),
+                        bottomRight: Radius.circular(10),
+                        bottomLeft: Radius.circular(10),
                       ),
                     ),
                     width: width,
